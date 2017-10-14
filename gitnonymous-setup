@@ -16,7 +16,7 @@ unset _GITNONYMOUS_SRC
 
 # set up our other variables
 confdir="${HOME}/.gitnonymous-${1}"
-sshfile="${confdir}/ssh/id_rsa"
+sshfile="${confdir}/ssh/id_ed25519"
 configfile="${confdir}/config"
 sshwrapperfile="${confdir}/git-ssh-wrap"
 
@@ -29,7 +29,7 @@ else
   mkdir -p "${confdir}/ssh"
   echo "-> Creating SSH key '${sshfile}'."
   echo "SSH key comment (public) is '${comment}'."
-  ssh-keygen -C "${comment}" -f "${sshfile}"
+  ssh-keygen -C "${comment}" -f "${sshfile}" -t ed25519
   echo "-> Creating SSH wrapper '${sshwrapperfile}'."
   cat "${dir}/git-ssh-wrap" | sed "s/KEYNAME/${1}/" > "${sshwrapperfile}"
   chmod 755 "${sshwrapperfile}"

@@ -1,3 +1,14 @@
+# This is not the original gitnonymous
+
+It's just a ed25519 capable fork. I think it's possible to get the 2 running
+concurrently, if you change this version `gitnonymous`' filename, but it hasn't
+been tested.
+
+The original is here : https://github.com/chr15m/gitnonymous
+
+# Original and still valid README starts here
+
+
 Contribute ~~anonymously~~ pseudonymously to Git repositories over Tor.
 
 ## tl;dr ##
